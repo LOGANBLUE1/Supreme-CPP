@@ -1,0 +1,3 @@
+
+    //baacktrack
+    s.push(temp);
