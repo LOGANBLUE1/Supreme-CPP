@@ -53,30 +53,23 @@ void levelOrderTraversal(Node* root ) {
 	q.push(NULL);
 
 	while(!q.empty()) {
-		//A
-		Node* temp = q.front();
-		//B
-		q.pop();
+	
+		Node* temp = q.front();		q.pop();
 		
-		if(temp == NULL) {
+		if(temp == NULL){
 			cout << endl;
-			if(!q.empty()) {
-				q.push(NULL);
-			}	
+			if(!q.empty()) 
+				q.push(NULL);	
 		}
-		else {
+		else{
 			//C
 			cout << temp->data << " ";
 			//D
-			if(temp -> left) {
+			if(temp -> left) 
 				q.push(temp ->left);
-			}
-			if(temp ->right) {
+			if(temp ->right)
 				q.push(temp->right);
-			}
-		}
-		
-		
+		}	
 	}
 }
 
@@ -113,32 +106,31 @@ void postOrderTraversal(Node* root) {
 //assuming there are only unique values in tree
 Node* findNodeInBST(Node* &root, int target) {
 	///base case
-	if(root == NULL) {
+	if(root == NULL) 
 		return NULL;
-	}
 
 	if(root->data == target) 
 		return root;
 //assuming there are only unique values in tree
 	
-	if(target > root->data) {
+	if(target > root->data) 
 		//right subtree me search karo
 		return findNodeInBST(root->right,  target);
-	}
-	else {
+	
+	else 
 		return findNodeInBST(root->left,  target);
-	}
+
 }
 
 int minVal(Node* root) {
 	Node* temp = root;
-	if(temp == NULL) {
+	if(temp == NULL) 
 		return -1;
-	}
+	
 
-	while(temp -> left != NULL) {
+	while(temp -> left != NULL) 
 		temp = temp ->left;
-	}
+	
 	return temp -> data;
 }
 
@@ -157,13 +149,13 @@ int maxVal(Node* root) {
 Node* deleteNodeInBST(Node* root, int target) {
 	
 	//base cae
-	if(root == NULL ) {
+	if(root == NULL ) 
 		return NULL;
-	}
+	
 //cout << "Request recieved for " >> root->data << " with target" << target << endl;
 	if(root->data == target) {
-		//isi ko delete krna h 
-		//4 cases 
+	//isi ko delete krna h 
+	//4 cases 
 		if(root->left == NULL && root->right == NULL) {
 			//leaf node
 			//delete root;
@@ -188,9 +180,7 @@ Node* deleteNodeInBST(Node* root, int target) {
 			//delete inorder predecessor from left subtree
 			root->left = deleteNodeInBST(root->left,inorderPre);
 			return root;
-			
 		}
-		
 	}
 	else if(target > root -> data) {
 		//right jana chahiye
@@ -202,43 +192,6 @@ Node* deleteNodeInBST(Node* root, int target) {
 	}
 	return root;
 }
-// void deleteNodeInBST(Node* root, int target) {   //wrong - Not working
-	
-// 	//base cae
-// 	if(root == NULL ) {
-// 		return;
-// 	}
-// 	Node* temp = findNodeInBST(root,target);
-
-// 	if(temp->left == NULL && temp->right == NULL) {
-// 			//leaf node
-// 			delete temp;
-// 			return;
-// 		}
-// 		else if(temp->left == NULL && temp->right != NULL) {
-// 			Node* child = temp->right;
-// 			delete temp;
-// 			return;
-// 		}
-// 		else if(temp->left != NULL && temp->right == NULL) {
-// 			Node* child  = temp->left;
-// 			delete temp;
-// 			return ;
-// 		}
-// 		else {
-// 			//both child
-// 			//find inorder predecessor inb left subtree
-// 			int inorderPre = maxVal(temp->left);
-// 			//replace temp->data value with inorder predecessor
-// 			temp->data = inorderPre;
-// 			//delete inorder predecessor from left subtree
-// 			deleteNodeInBST(temp->left,inorderPre);
-// 			return;
-			
-// 		}
-
-// }
-
 
 
 int main() {

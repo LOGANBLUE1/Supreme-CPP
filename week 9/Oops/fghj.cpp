@@ -17,8 +17,8 @@ public:
    
 };
 
-int main()
-{   C obj;
+int main(){   
+   C obj;
    // obj.func();   //-- comes under ambiguity in inheritence
    // obj.A::func();//ambiguity resolved
    obj.B::func();
