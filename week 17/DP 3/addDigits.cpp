@@ -28,4 +28,5 @@ int main(){
     }
     cout<<"Is a palindrome"<<endl;
     return 0;
+    
 }
