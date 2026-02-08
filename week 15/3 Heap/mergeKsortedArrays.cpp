@@ -19,7 +19,7 @@ public:
 };
 
 vector<int> mergekSortedArrays(int arr[][4],int k,int n){
-    priority_queue<info*,vector<info*>,compare>minHeap;
+    priority_queue<info*,vector<info*>, compare>minHeap;
     vector<int>ans;
 
     //har array ka first element insert karo
@@ -42,11 +42,12 @@ vector<int> mergekSortedArrays(int arr[][4],int k,int n){
         }
     }
 }
-int main()
-{
+
+int main(){
     int arr[][4] = {{2,4,6,8},
                     {1,3,5,7},
-                    {0,9,10,11}   };
+                    {0,9,10,11}
+                    };
     int k = 3;
     int n = 4;
     

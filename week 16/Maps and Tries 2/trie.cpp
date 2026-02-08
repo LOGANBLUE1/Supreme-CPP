@@ -9,6 +9,7 @@ public:
 
     TrieNode(char data){
         this->data = data;
+         
         for(int i=0;i<26;i++){
             children[i] = nullptr;
         }
@@ -27,7 +28,7 @@ void insertWord(TrieNode* root,string word){
     TrieNode* child;
 
     if(root->children[index] != nullptr){
-        child  = root->children[index];
+        child = root->children[index];
     }
     else{
         child = new TrieNode(ch);

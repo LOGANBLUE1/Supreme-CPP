@@ -37,34 +37,33 @@ class NodeData {
 
 
 Node* insertIntoBST(Node* root, int data) {
+	if(root == NULL) {
+		//this is the first node we have to create
+		root = new Node(data);
+		return root;
+	}
 
-        if(root == NULL) {
-                //this is the first node we have to create
-                root = new Node(data);
-                return root;
-        }
+	//no the first node 
 
-        //no the first node 
-
-        if(root-> data > data) {
-                //insert in left
-                root->left = insertIntoBST(root->left, data);
-        }
-        else {
-                //insert into right
-                root->right = insertIntoBST(root->right, data);
-        }
-        return root;
+	if(root-> data > data) {
+		//insert in left
+		root->left = insertIntoBST(root->left, data);
+	}
+	else {
+		//insert into right
+		root->right = insertIntoBST(root->right, data);
+	}
+	return root;
 }
 
 void takeInput(Node* &root) {
-        int data;
-        cin >> data;
+	int data;
+	cin >> data;
 
-        while(data != -1) {
-                root = insertIntoBST(root, data);
-                cin >> data;
-        }
+	while(data != -1) {
+			root = insertIntoBST(root, data);
+			cin >> data;
+	}
 }
 void levelOrderTraversal(Node* root ) {
 	queue<Node*> q;

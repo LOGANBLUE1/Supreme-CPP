@@ -6,11 +6,11 @@ public:
     int data;
     Node* left;
     Node* right;
-    // Node(){
-    //     this->data = 0;
-    //     this->left = NULL;
-    //     this->right = NULL;
-    // }
+    Node(){
+        this->data = 0;
+        this->left = NULL;
+        this->right = NULL;
+    }
     Node(int data){
         this->data = data;
         this->left = NULL;
@@ -118,7 +118,7 @@ int minVal(Node* root){
     return temp->data;
 }
 
-int minVal(Node* root){
+int maxVal(Node* root){
     Node* temp = root;
     if(temp == NULL){
         return -1;
@@ -128,6 +128,7 @@ int minVal(Node* root){
     }
     return temp->data;
 }
+
 int main()
 {
     return 0;
