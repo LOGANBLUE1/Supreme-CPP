@@ -2,18 +2,17 @@
 using namespace std;
 void solve(int arr[],int i,int sum,int& maxi){
     int size = 5;
-//base case
+    //base case
     if(i >= size){
         //maxi update
         maxi = max(sum,maxi);
         //checks with all the sum possible and max sum will be maxi
         return;
     }
-//include 
-solve(arr,i+2,sum+arr[i],maxi);
-//exclude
-solve(arr,i+1,sum,maxi);
-
+    //include 
+    solve(arr,i+2,sum+arr[i],maxi);
+    //exclude
+    solve(arr,i+1,sum,maxi);
 }
 int main()
 {

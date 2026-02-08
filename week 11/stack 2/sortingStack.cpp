@@ -16,13 +16,12 @@ void insertSorted(stack<int>&s,int temp){
     //recursion
     int element = s.top();
 
-        //removing elements
-        s.pop();
-        //recursive call
-        insertSorted(s,temp);
-        //pushing back
-        s.push(element);
-
+    //removing elements
+    s.pop();
+    //recursive call
+    insertSorted(s,temp);
+    //pushing back
+    s.push(element);
 }
 
 void sortStack(stack<int>&s){
@@ -43,14 +42,10 @@ void sortStack(stack<int>&s){
 }
 
 void print(stack<int> s){
-
     while(!s.empty()){
         cout<<s.top()<<" ";
-
         s.pop();
-    }
-    cout<<endl;
-
+    }cout<<endl;
 }
 
 int main()

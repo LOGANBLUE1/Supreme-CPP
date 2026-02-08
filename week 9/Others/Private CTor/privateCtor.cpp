@@ -19,18 +19,23 @@ public:
 class BoxFactory{
     int count;
 
-    public:
+public:
+    BoxFactory() : count(0) {}
     Box getBox(int _w){
         ++count;
         return Box(_w);
+    }
+    int getCount(){
+        return this->count;
     }
 };
 
 int main()
 {
-    BoxFactory bfact;
-    Box box = bfact.getBox(5);
-    cout << box.getWidth()<<endl;
+    BoxFactory *bfact = new BoxFactory();
+    Box box = bfact->getBox(5);
+    Box box2 = bfact->getBox(10);
+    cout << bfact->getCount()<<endl;
 
     return 0;
 }

@@ -7,8 +7,9 @@ void insertAtBottom(stack<int>&s,int target){
         s.push(target);
         return;
     }
-    int temp = s.top();
-    s.pop();
+
+    int temp = s.top(); s.pop();
+
     insertAtBottom(s,target);
     s.push(temp);
 }
@@ -19,8 +20,7 @@ void reverseStack(stack<int>&s){
         return;
     }
 
-    int target = s.top();
-    s.pop();
+    int target = s.top();   s.pop();
 
     //reverse stack
     reverseStack(s);
@@ -35,9 +35,9 @@ void print(stack<int> s){
     }cout<<endl;
 }
 
-int main()
-{
-     stack<int> s;
+int main(){
+
+    stack<int> s;
     s.push(10);
     s.push(20);
     s.push(30);

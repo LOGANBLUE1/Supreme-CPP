@@ -3,38 +3,38 @@
 using namespace std;
 
 class Node {
-        public:
-        int data;
-        Node* left;
-        Node* right;
+	public:
+	int data;
+	Node* left;
+	Node* right;
 
-        Node(int data) {
-                this->data = data;
-                this->left = NULL;
-                this->right = NULL;
-        }
+	Node(int data) {
+		this->data = data;
+		this->left = NULL;
+		this->right = NULL;
+	}
 };
 
 
 Node* insertIntoBST(Node* root, int data) {
 
-        if(root == NULL) {
-                //this is the first node we have to create
-                root = new Node(data);
-                return root;
-        }
+	if(root == NULL) {
+			//this is the first node we have to create
+			root = new Node(data);
+			return root;
+	}
 
-        //no the first node 
+	//no the first node 
 
-        if(root-> data > data) {
-                //insert in left
-                root->left = insertIntoBST(root->left, data);
-        }
-        else {
-                //insert into right
-                root->right = insertIntoBST(root->right, data);
-        }
-        return root;
+	if(root-> data > data) {
+			//insert in left
+			root->left = insertIntoBST(root->left, data);
+	}
+	else {
+			//insert into right
+			root->right = insertIntoBST(root->right, data);
+	}
+	return root;
 }
 
 void takeInput(Node* &root) {
@@ -147,12 +147,11 @@ int maxVal(Node* root) {
 }
 
 Node* deleteNodeInBST(Node* root, int target) {
-	
 	//base cae
 	if(root == NULL ) 
 		return NULL;
 	
-//cout << "Request recieved for " >> root->data << " with target" << target << endl;
+	//cout << "Request recieved for " >> root->data << " with target" << target << endl;
 	if(root->data == target) {
 	//isi ko delete krna h 
 	//4 cases 

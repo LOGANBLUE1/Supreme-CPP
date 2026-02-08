@@ -34,8 +34,8 @@ void merge(int *arr,int s,int e){
     while(b<len2){
         arr[k++]= right[b++];
     }
-delete []left;
-delete []right;
+    delete []left;
+    delete []right;
 }
 void mergesort(int *arr,int s,int e){
     //base case -> single element/invalid array

@@ -2,10 +2,6 @@
 using namespace std;
 class Animal{
 public:
-    int age;
-    int bodycount;
-    string name;
-
     Animal(){
         cout<<"this is animal."<<endl;
     }
@@ -20,7 +16,6 @@ public:
 
 class Dog:public Animal{
 public:
-
     Dog(){
         cout<<"this is Dog."<<endl;
     }
@@ -36,14 +31,14 @@ int main(){
     // Dog*a = new Dog;
 
     // // Upcasting
-    Animal* a = new Dog();//calls function of parent class
-    a->Sleep(); // because of virtual it prints dog
-    delete a;
+    // Animal* a = new Dog();//calls function of parent class
+    // a->Sleep(); // because of virtual it prints dog
+    // delete a;
 
     // Downcasting - error
-    // Dog* b = (Dog*)new Animal();//calls sleep of dof because sleep of animal is virtual
-    // b->Sleep();
-    // delete b;
+    Dog* b = (Dog*)new Animal();//calls sleep of dof because sleep of animal is virtual
+    b->Sleep();
+    delete b;
 
     return 0;
 }

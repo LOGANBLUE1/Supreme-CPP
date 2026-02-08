@@ -1,6 +1,7 @@
 #include<iostream>
 #include<stack>
 using namespace std;
+
 void insertAtBottom(stack<int>&s,int target){
     if(s.empty()){
         s.push(target);
@@ -17,8 +18,7 @@ void print(stack<int>&s){
         s.pop();
     }cout<<endl;
 }
-int main()
-{
+int main(){
     stack<int> s;
     s.push(10);
     s.push(20);

@@ -1,10 +1,10 @@
 #include<iostream>
 using namespace std;
 class A{
-    private:
+private:
     int x;
 
-    public:
+public:
     A(int _x): x(_x) {}
     
     int getX() const { return x;}

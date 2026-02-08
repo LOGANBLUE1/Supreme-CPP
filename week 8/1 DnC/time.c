@@ -9,7 +9,7 @@ int main (){
     start_t = clock();
     printf("Starting of the program, start_t = %ld\n", start_t);
     printf("Going to scan a big loop, start_+ = %ld\n", start_t);
-    for(i=0; i < 10000000; i++){
+    for(i=0; i < 1e9; i++){
 
     }
 

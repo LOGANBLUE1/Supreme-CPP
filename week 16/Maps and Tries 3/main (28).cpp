@@ -99,7 +99,7 @@ public:
         findLCP(first, ans, root);
         return ans;
     }
-
+};
 
 
 

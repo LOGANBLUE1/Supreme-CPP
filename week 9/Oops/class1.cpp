@@ -2,55 +2,51 @@
 using namespace std;
 
 class Animal{
-private:
-    int age;
-    int bodycount;
-    string name;
 public:
-void setage(int age){
-    this->age = age;
-}
-int getage(){
-    return age;
-}
-void setbodycount(int bodycount){
-    this->bodycount = bodycount;
-}
-int getbodycount(){
-    return bodycount;
-}
-void setname(string name){
-    this->name = name;
-}
-string getname(){
-    return name;
-}
-void Call(){
-    cout<<"this is "<<getname()<<" "<<getage()<<" years old."<<endl;
-}
-void Sleep(){
-    cout<<"Sleeping"<<endl;
-}
-// Animal(string name,int bodycount,int age){
-//     this->name = name;
-//     this->bodycount = bodycount;
-//     this->age = age;
-// }
+    int age;
+    int bodyweight;
+    string name;
 
-Animal(string name,int bodycount,int age) : name(name),bodycount(bodycount),age(age){}
+    // Animal(){}
+
+    Animal(string name,int bodyweight,int age) : 
+        name(name),bodyweight(bodyweight),age(age){}
+    
+    void Sleep(){
+        cout<<"Sleeping"<<endl;
+    }
+
+    Animal(Animal *a){
+        cout<<"I am function 1---"<<endl;
+        this->name = a->name;
+        this->bodyweight = a->bodyweight;
+        this->age = a->age;
+    }
+
+    Animal(const Animal& a) {
+        cout<<"I am function 2---"<<endl;
+        this->name = a.name;
+        this->bodyweight = a.bodyweight * 2;
+        this->age = a.age;
+    }
+
 };
 
 int main()
 {
 //    Animal dog = Animal("tommy",2,7);// Animal dog("tommy" ,2,7) works the same
-//    Animal* cat = new Animal("pussy",1,4);
+//    Animal* cat = new Animal("cat",1,4);
 
 //     dog.setage(9);
 //      dog.Call();
 //      (*cat).Call();
     //  dog.Sleep();
+
     Animal* a = new Animal("derry",5,17);
-    a->Sleep();
+    // a->Sleep();
+    Animal b = *a;
+    // Animal b = Animal(a);
+    cout<<b.name<<" "<<b.bodyweight<<" "<<b.age<<endl;
 
     return 0;
 }
